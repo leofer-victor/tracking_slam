@@ -1,0 +1,18 @@
+<launch>
+
+<!-- Start TRACKING-SLAM System -->
+<node pkg="tracking_slam" type="tracking_slam_node" name="tracking_slam_node" output="screen" >
+	<param name="tracking_slam_cfg_dir" value="$(find tracking_slam)/config/tb3_test.yaml" />
+	<param name="orbvoc_dir" value="$(find tracking_slam)/config/orbvoc/ORBvoc.bin" />
+	<param name="prototxt_file" value="$(find tracking_slam)/config/segnet/segnet_pascal.prototxt" />
+	<param name="pascal_caffemodel" value="$(find tracking_slam)/config/segnet/segnet_pascal.caffemodel" />
+	<param name="pascal_png" value="$(find tracking_slam)/config/segnet/pascal.png" />
+	<param name="results_dir" value="$(find tracking_slam)/results" />
+</node>
+
+<!-- Open Rviz -->
+<node pkg="rviz" type="rviz" name="rviz" output="screen"
+	args="-d $(find tracking_slam)/config/rviz/tb3_test.rviz" required="true">
+</node>
+
+</launch>

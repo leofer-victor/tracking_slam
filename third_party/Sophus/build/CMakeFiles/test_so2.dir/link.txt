@@ -1,0 +1,1 @@
+/usr/bin/c++   -O3 -DNDEBUG    CMakeFiles/test_so2.dir/sophus/test_so2.cpp.o  -o test_so2 -rdynamic libSophus.so -Wl,-rpath,/home/leo/leo_slam/src/tracking_slam/third_party/Sophus/build 
